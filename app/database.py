@@ -7,7 +7,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 # Base para los modelos
 Base = declarative_base()
 
-# Motor sin async, porque Railway usa dominio interno
+# Motor sin async
 engine = create_engine(
     DATABASE_URL,
     pool_pre_ping=True
