@@ -1,14 +1,15 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import Optional
 
-# -----------------------
-#   PROPIETARIOS
-# -----------------------
+
+# ==========================
+#    SCHEMAS PROPIETARIO
+# ==========================
 
 class PropietarioBase(BaseModel):
     nombre: str
     telefono: Optional[str] = None
-    email: Optional[str] = None
+    email: Optional[EmailStr] = None
 
 
 class PropietarioCreate(PropietarioBase):
@@ -18,7 +19,7 @@ class PropietarioCreate(PropietarioBase):
 class PropietarioUpdate(BaseModel):
     nombre: Optional[str] = None
     telefono: Optional[str] = None
-    email: Optional[str] = None
+    email: Optional[EmailStr] = None
 
 
 class PropietarioOut(PropietarioBase):
@@ -26,4 +27,3 @@ class PropietarioOut(PropietarioBase):
 
     class Config:
         orm_mode = True
-
