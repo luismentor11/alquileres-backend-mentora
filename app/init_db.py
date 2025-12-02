@@ -1,9 +1,11 @@
-from app.database import engine
-from app.models.models import Base
+from app.database import Base, engine
+from app.models import models
 
-def run():
+
+def init_db():
+    # Importar modelos asegura que se registren en Base.metadata
     Base.metadata.create_all(bind=engine)
-    print("Tablas creadas con éxito.")
+
 
 if __name__ == "__main__":
-    run()
+    init_db()
