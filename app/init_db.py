@@ -3,7 +3,7 @@ from app.models import models
 
 
 def init_db():
-    # Importar modelos asegura que se registren en Base.metadata
+    # Crea todas las tablas definidas en los modelos
     Base.metadata.create_all(bind=engine)
 
 
